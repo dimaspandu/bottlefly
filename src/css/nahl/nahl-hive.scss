@@ -1,0 +1,307 @@
+$white : #fff;
+$bright : #fafafa;
+$light : #f4f4f4;
+$silver: #bebebe;
+$grey: #555555;
+$dark : #111111;
+$brown : brown;
+$green : #00e676;
+$blue : #00b0ff;
+$red : #ff3333;
+$bee : #f9c901;
+
+@mixin createTree($z_index){
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: $z_index;
+}
+
+@mixin createHive($z_index){
+	float: left;
+	width: 100%;
+	z-index: $z_index;
+}
+
+@mixin createHexagonal($volume){
+	width: ($volume/12)*100%;
+}
+
+@mixin createButton($border_color, $bg_color, $txt_color){
+	border: solid 1px $border_color;
+	background: $bg_color;
+	color: $txt_color;
+	font-weight: bold;
+}
+
+.relative { position: relative; }
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
+.push-up-sm { margin-top: 5px; }
+.push-up-md { margin-top: 10px; }
+.push-up-lg { margin-top: 20px; }
+.pad-sm { padding: 5px; }
+.pad-md { padding: 10px; }
+.pad-lg, .pad-space { padding: 20px; }
+.pad-up-monster { padding-top: 40px; }
+.pad-down-monster { padding-bottom: 40px; }
+.pad-up-no { padding-top: 0px; }
+.pad-down-no { padding-bottom: 0px; }
+.bold { font-weight: bold; }
+
+.hover:hover {
+	opacity: 0.7;
+}
+
+.tab {
+	border-bottom: solid 3px transparent;
+}
+.tab-active {
+	border-bottom: solid 3px $bee;
+}
+.tab:hover, .tab:focus {
+	border-bottom: solid 3px $bee;
+}
+.tab a:link {
+	color: $grey;
+	font-weight: bold;
+}
+
+.bg-dark {
+	background-color: $dark !important;
+	color: $white;
+}
+.bg-bee {
+	background-color: $bee !important;
+	color: $dark;
+}
+
+.text-red { color: $red; }
+.text-green { color: $green; }
+.text-blue { color: $blue; }
+.text-bee { color: $bee; }
+.text-placeholder { 
+    text-align: center;
+    color: $silver;
+}
+.text-mini { 
+    font-size: 0.9em;
+    opacity: 0.7; 
+}
+
+body {
+	background-color: $light;
+	color: $grey;
+    font-family: sans-serif;
+	font-size: 14px;
+	letter-spacing: 0px;
+	line-height: 21px;
+}
+
+a:link {
+	color: $green;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	opacity: 0.7;
+}
+
+.headtext { font-weight: bold; }
+
+.tree {
+	@include createTree(9999999);
+}
+
+.rant {
+	@include createHive(99999999);
+	background-color: $white;
+	box-shadow: 0 3px 7px #dedede;
+}
+
+.hole {
+	@include createHive(99999999);
+}
+
+.trunk {
+	@include createHive(99999999);
+}
+
+.rock {
+	@include createHive(99999999);
+}
+
+.hexagonal-1, .hexagonal-2, .hexagonal-3, .hexagonal-4, .hexagonal-5, .hexagonal-6, .hexagonal-7, .hexagonal-8, .hexagonal-9, .hexagonal-10, .hexagonal-11, .hexagonal-12, .hexagonal-sticky-1, .hexagonal-sticky-2, .hexagonal-sticky-3, .hexagonal-sticky-4, .hexagonal-sticky-5, .hexagonal-sticky-6, .hexagonal-sticky-7, .hexagonal-sticky-8, .hexagonal-sticky-9, .hexagonal-sticky-10, .hexagonal-sticky-11, .hexagonal-sticky-12 {
+	float: left;
+}
+
+.hexagonal-12, .hexagonal-sticky-12 {
+	@include createHexagonal(12);
+}
+.hexagonal-11, .hexagonal-sticky-11 {
+	@include createHexagonal(11);
+}
+.hexagonal-10, .hexagonal-sticky-10 {
+	@include createHexagonal(10);
+}
+.hexagonal-9, .hexagonal-sticky-9 {
+	@include createHexagonal(9);
+}
+.hexagonal-8, .hexagonal-sticky-8 {
+	@include createHexagonal(8);
+}
+.hexagonal-7, .hexagonal-sticky-7 {
+	@include createHexagonal(7);
+}
+.hexagonal-6, .hexagonal-sticky-6 {
+	@include createHexagonal(6);
+}
+.hexagonal-5, .hexagonal-sticky-5 {
+	@include createHexagonal(5);
+}
+.hexagonal-4, .hexagonal-sticky-4 {
+	@include createHexagonal(4);
+}
+.hexagonal-3, .hexagonal-sticky-3 {
+	@include createHexagonal(3);
+}
+.hexagonal-2, .hexagonal-sticky-2 {
+	@include createHexagonal(2);
+}
+.hexagonal-1, .hexagonal-sticky-1 {
+	@include createHexagonal(1);
+}
+
+.card {
+	background: $white;
+	box-shadow: 0 3px 14px #dedede;
+}
+.card-header {
+	@extend .pad-lg;
+	background: $bright;
+}
+.card-footer {
+    width: calc(100% - 10%);
+    margin-left: 5%;
+	@extend .pad-lg;
+	border-bottom-left-radius: 9px;
+	border-bottom-right-radius: 9px;
+	background: $white;
+	color: $silver;
+	box-shadow: 0 3px 14px #dedede;
+	box-sizing: border-box;
+}
+.card a:link {
+	color: $green !important;
+	font-weight: normal !important;
+}
+.card-footer a:link {
+	color: $blue !important;
+	font-weight: normal !important;
+}
+.card-radius {
+	border-radius: 5px;
+}
+.card-rounded {
+	border-radius: 50px;
+}
+
+.form-control {
+    @extend .pad-md;
+    padding-left: 0px;
+	width: 100%;
+	border: 0px;
+	border-bottom: solid 1px $silver;
+	background: transparent;
+	box-sizing: border-box;
+	font-size: 1em;
+	color: $grey;
+}
+.form-control-border {
+    padding-left: 10px;
+	border: solid 1px $silver;
+	border-radius: 3px;
+}
+.form-control:focus {
+	outline: none;
+	border-bottom: solid 1px $grey;
+}
+.form-control-border:focus {
+	border: solid 1px $grey;
+}
+
+.btn {
+	@extend .pad-md;
+	width: auto;
+	border: solid 1px $grey;
+	border-radius: 3px;
+	background: transparent;
+	font-size: 1em;
+	color: $grey;
+}
+.btn-md {
+	padding: 15px;
+}
+.btn-lg {
+	@extend .pad-lg;
+}
+.btn-block {
+	width: 100%;
+}
+.btn-bee {
+	@include createButton($bee, $bee, $dark);
+}
+.btn-red {
+	@include createButton($red, $red, $white);
+}
+.btn-green {
+	@include createButton($green, $green, $white);
+}
+.btn-blue {
+	@include createButton($blue, $blue, $white);
+}
+.btn-line-bee {
+	border: solid 1px $bee;
+	color: $bee;
+}
+.btn-line-red {
+	border: solid 1px $red;
+	color: $red;
+}
+.btn-line-green {
+	border: solid 1px $green;
+	color: $green;
+}
+.btn-line-blue {
+	border: solid 1px $blue;
+	color: $blue;
+}
+.btn-flat {
+	border-radius: 0px;
+}
+.btn-rounded {
+	border-radius: 50px;
+}
+.btn:hover {
+	opacity: 0.7;
+}
+.btn:focus {
+	outline: none;
+}
+
+@media only screen and (max-width: 1080px){
+	.hexagonal-1, .hexagonal-2, .hexagonal-3, .hexagonal-4, .hexagonal-5, .hexagonal-6, .hexagonal-7, .hexagonal-8, .hexagonal-9, .hexagonal-10, .hexagonal-11, .hexagonal-12 {
+	    float: none;
+	    width: 100%;
+    }
+
+    .pad-space {
+        padding: 0px;
+    }
+
+	.rant {
+		box-shadow: 0 0 0 transparent;
+	}
+}

@@ -1,0 +1,28 @@
+$white : #fff;
+$bright : #fafafa;
+$light : #f4f4f4;
+$silver: #bebebe;
+$grey: #555555;
+$dark : #111111;
+$brown : brown;
+$green : #00e676;
+$blue : #00b0ff;
+$red : #ff3333;
+$bee : #f9c901;
+
+.front-logo-img {
+	width: 90px;
+}
+.top-logo-img {
+	width: 70px;
+}
+.buletin-component a:link {
+	color: $silver;
+    font-weight: bold;
+}
+.buletin-active {
+	background-color: $bee;
+}
+.buletin-active a:link {
+    color: $dark;
+}
